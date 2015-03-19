@@ -1,0 +1,19 @@
+
+char ph_no[]="86xxxxxxxx"; //phone no. to make the call
+void setup()
+{
+  Serial.begin(9600); 
+  delay(2000);
+  Serial.println("AT");  //testing the GSM modem
+  delay(1000);
+  Serial.print("ATD");  //Command for dailing a number
+  Serial.print(ph_no);  //appending phone no. with ATD command
+  Serial.println(";");
+  delay(10000);         //10 sec. delay to automatically halt the call
+  Serial.print("ATH");
+  delay(1000);
+}
+
+void loop()
+{
+}
